@@ -25,15 +25,15 @@ def find_flag_in_text(text: str) -> str:
     return flag_match.group(0)
 
 def make_request(url: str, method: str = "get", **kwargs) -> requests.Response:
-    try:
-        if method.lower() == "get":
-            response = requests.get(url, **kwargs)
-        elif method.lower() == "post":
-            response = requests.post(url, **kwargs)
-        else:
-            raise ValueError(f"Unsupported HTTP method: {method}")
-        
-        response.raise_for_status()
-        return response
-    except requests.exceptions.RequestException as e:
-        raise Exception(f"Request failed: {str(e)}")
+    # try:
+    if method.lower() == "get":
+        response = requests.get(url, **kwargs)
+    elif method.lower() == "post":
+        response = requests.post(url, **kwargs)
+    else:
+        raise ValueError(f"Unsupported HTTP method: {method}")
+    
+    # response.raise_for_status()
+    return response
+    # except requests.exceptions.RequestException as e:
+    #     raise Exception(f"Request failed: {str(e)}")
