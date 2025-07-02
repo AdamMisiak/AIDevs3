@@ -26,7 +26,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 WEBHOOK_PORT = int(os.getenv("WEBHOOK_PORT", "8000"))
 
 # Configuration
-ROBOT_PASSWORD = "S2FwaXRhbiBCb21iYTsp"
+ROBOT_PASSWORD = os.getenv("ROBOT_PASSWORD")
 app = FastAPI(title="Robot Heart API")
 
 # State
